@@ -75,8 +75,8 @@ def test_pwm():
 
 
 while 1:
-    # forward(1)
-    # reverse(1)
-    test_pwm()
+    forward(1)
+    reverse(1)
+    #test_pwm()
     GPIO.cleanup()
     break
