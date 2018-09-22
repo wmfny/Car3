@@ -38,6 +38,21 @@ def reverse(x):
     GPIO.output(left_backward, GPIO.LOW)
     GPIO.output(right_backward, GPIO.LOW)
 
+def left(x):
+    GPIO.output(left_backward, GPIO.HIGH)
+    GPIO.output(right_forward, GPIO.HIGH)
+    print("Turning Left")
+    time.sleep(x)
+    GPIO.output(left_backward, GPIO.LOW)
+    GPIO.output(right_forward, GPIO.LOW)
+    
+def right(x):
+    GPIO.output(left_forward, GPIO.HIGH)
+    GPIO.output(right_backward, GPIO.HIGH)
+    print("Turning Right")
+    time.sleep(x)
+    GPIO.output(left_forward, GPIO.LOW)
+    GPIO.output(right_backward, GPIO.LOW)
 
 def test_pwm():
     left = GPIO.PWM(left_forward, pwm_frequency)
